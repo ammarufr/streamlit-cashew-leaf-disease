@@ -1,6 +1,6 @@
 import numpy as np
 import streamlit as st
-from tensorflow.keras.models import load_model
+import tflite_runtime.interpreter as tflite
 from tensorflow.keras.preprocessing import image
 from PIL import Image as PILImage
 from streamlit_option_menu import option_menu
@@ -10,10 +10,12 @@ IMG_SIZE = 224
 THRESHOLD = 0.6
 CLASS_LABELS = ['Cashew anthracnose', 'Cashew healthy', 'Cashew leaf miner', 'Cashew red rust', 'non-leaf']
 
-# Load model dengan caching
+# Load TFLite model dengan caching
 @st.cache_resource
 def load_model_cached():
-    return load_model("model_cashew_disease.h5")
+    interpreter = tflite.Interpreter(model_path="model_cashew_disease.tflite")
+    interpreter.allocate_tensors()
+    return interpreter
 
 model = load_model_cached()
 
@@ -94,7 +96,14 @@ elif selected == "Diagnosis":
             img_array = image.img_to_array(img_resized)
             img_array = np.expand_dims(img_array, axis=0) / 255.0
 
-            pred = model.predict(img_array)
+            # Inference dengan TFLite
+            input_details = model.get_input_details()
+            output_details = model.get_output_details()
+
+            model.set_tensor(input_details[0]['index'], img_array.astype(np.float32))
+            model.invoke()
+            pred = model.get_tensor(output_details[0]['index'])
+
             confidence = float(np.max(pred))
             class_idx = int(np.argmax(pred))
             predicted_class = CLASS_LABELS[class_idx]
