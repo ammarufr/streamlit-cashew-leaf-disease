@@ -2,3 +2,4 @@ streamlit
 numpy
 pillow
 streamlit-option-menu
+tflite-runtime
