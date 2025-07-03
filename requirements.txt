@@ -1,5 +1,4 @@
 streamlit
-tensorflow==2.9.3
 numpy
 pillow
 streamlit-option-menu
