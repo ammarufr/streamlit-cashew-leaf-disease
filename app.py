@@ -94,6 +94,12 @@ elif selected == "Diagnosis":
             img_array = image.img_to_array(img_resized)
             img_array = np.expand_dims(img_array, axis=0) / 255.0
 
+        with st.spinner("Mendiagnosis..."):
+            pred = model.predict(img_array)
+            confidence = float(np.max(pred))
+            class_idx = int(np.argmax(pred))
+            predicted_class = CLASS_LABELS[class_idx]
+
             pred = model.predict(img_array)
             confidence = float(np.max(pred))
             class_idx = int(np.argmax(pred))
