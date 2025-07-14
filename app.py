@@ -86,7 +86,7 @@ elif selected == "Diagnosis":
         col1, col2 = st.columns([1, 2])
 
         with col1:
-            st.image(input_image, caption="Gambar yang diproses", use_column_width=True)
+            st.image(input_image, caption="Gambar yang diproses", use_container_width=True)
 
         with col2:
             img = PILImage.open(input_image).convert("RGB")
@@ -107,7 +107,7 @@ elif selected == "Diagnosis":
 
                 if predicted_class in disease_info:
                     detail = disease_info[predicted_class]
-                    st.image(detail["gambar"], caption=f"Gambar: {predicted_class}", use_column_width=True)
+                    st.image(detail["gambar"], caption=f"Gambar: {predicted_class}", use_container_width=True)
                     st.markdown(f"### ℹ️ Informasi Penyakit: {predicted_class}")
                     st.markdown(f"**Deskripsi:** {detail['deskripsi']}")
                     st.markdown(f"**Penanganan:**\n{detail['penanganan']}")
@@ -136,6 +136,6 @@ elif selected == "Informasi Penyakit":
 
     for disease, detail in info.items():
         with st.expander(f"📌 {disease}"):
-            st.image(detail["gambar"], caption=f"Gambar: {disease}", use_column_width=True)
+            st.image(detail["gambar"], caption=f"Gambar: {disease}", use_container_width=True)
             st.markdown(f"**Deskripsi:** {detail['deskripsi']}")
             st.markdown(f"**Penanganan:**\n{detail['penanganan']}")
