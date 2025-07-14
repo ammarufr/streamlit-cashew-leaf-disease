@@ -21,7 +21,7 @@ model = load_model_cached()
 with st.sidebar:
     selected = option_menu(
         menu_title="Navigasi",
-        options=["Welcome", "Diagnosis", "Informasi<br>Penyakit"],
+        options=["Welcome", "Diagnosis", "InformasiPenyakit"],
         icons=["house", "activity", "book"],
         default_index=0
     )
