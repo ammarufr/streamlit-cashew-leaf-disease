@@ -68,12 +68,12 @@ elif selected == "Diagnosis":
         "Cashew leaf miner": {
             "deskripsi": "Hama penggerek daun yang membuat lorong-lorong putih di permukaan daun.",
             "penanganan": "- Gunakan insektisida sistemik.\n- Pangkas daun yang terinfeksi parah.\n- Jaga kebersihan area kebun.",
-            "gambar": "images/leaf miner.jpg"
+            "gambar": "images/leaf_miner.jpg"
         },
         "Cashew red rust": {
             "deskripsi": "Penyakit jamur yang menyebabkan bercak karat merah/oranye di permukaan daun.",
             "penanganan": "- Semprotkan fungisida secara berkala.\n- Singkirkan daun-daun terinfeksi.\n- Hindari kelembapan tinggi di sekitar tanaman.",
-            "gambar": "images/red rust.jpg"
+            "gambar": "images/red_rust.jpg"
         }
     }
 
@@ -131,12 +131,12 @@ elif selected == "Informasi Penyakit":
         "Cashew leaf miner": {
             "deskripsi": "Hama penggerek daun yang membuat lorong-lorong putih di permukaan daun.",
             "penanganan": "- Gunakan insektisida sistemik.\n- Pangkas daun yang terinfeksi parah.\n- Jaga kebersihan area kebun.",
-            "gambar": "images/leaf miner.jpg"
+            "gambar": "images/leaf_miner.jpg"
         },
         "Cashew red rust": {
             "deskripsi": "Penyakit jamur yang menyebabkan bercak karat merah/oranye di permukaan daun.",
             "penanganan": "- Semprotkan fungisida secara berkala.\n- Singkirkan daun-daun terinfeksi.\n- Hindari kelembapan tinggi di sekitar tanaman.",
-            "gambar": "images/red rust.jpg"
+            "gambar": "images/red_rust.jpg"
         }
     }
 
