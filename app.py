@@ -51,7 +51,7 @@ if selected == "Welcome":
         <br>
         3. Sistem akan memproses gambar dan menampilkan hasil diagnosis beserta informasi penyakit.
         <br>
-        4. Jika ingin membaca penjelasan lengkap tentang tiap penyakit, klik menu <b>Informasi Penyakit</b>.
+        4. Jika ingin membaca penjelasan lengkap tentang tiap penyakit, klik menu <b>Penyakit</b>.
     </div>
     """, unsafe_allow_html=True)
 
@@ -119,7 +119,7 @@ elif selected == "Diagnosis":
                     st.markdown(f"**Penanganan:**\n{detail['penanganan']}")
 
 # --- Informasi Penyakit Page ---
-elif selected == "Informasi Penyakit":
+elif selected == "Penyakit":
     st.title("Informasi Penyakit Daun Jambu Mete")
 
     info = {
